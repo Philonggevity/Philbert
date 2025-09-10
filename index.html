@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" id="box">
+        <h1 id="main-heading"> Hello World! </h1>
+        <p>Do something to the button</p>
+        <button id="counter" onclick="Clicks()" onmouseout="NotHovering()" onmouseover="Hovering()">Click Me</button>
+    </div>
+    <script>
+
+    let count = 0;
+       const counterButton = document.getElementById('counter');
+       const heading = document.getElementById('main-heading');
+       const container = document.getElementById('box');
+       function updateHeadingWithCount() {
+         heading.innerHTML = `Button Clicked <span id="display">${count}</span> Times`;
+       }
+
+       function Hovering() {
+         updateHeadingWithCount();
+       }
+
+       function NotHovering() {
+         heading.textContent = "Try Clicking the Button ";
+       }
+
+       function Clicks() {
+         count++;
+         updateHeadingWithCount();
+
+         const TextColor = color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+         const Background = color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+         heading.style.color = TextColor;
+         container.style.backgroundColor = Background;
+       }
+
+    </script>
+
+</body>
+
+</html>
